@@ -13,6 +13,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     music.wawawawaa.play()
 })
 info.setLife(15)
+info.onLifeZero(function () {
+    web.open(info.score().toString())
+    game.gameOver(false)
+})
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . . 
     . . . . . . . 2 . . . . . . . . 
